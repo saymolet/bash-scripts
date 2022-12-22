@@ -5,14 +5,17 @@ function check_exists() {
   [ -e "$1" ]
 }
 
-apt-get update
+NC='\033[0m' # No Color
+GREEN='\033[0;32m'
+# apt-get update
 
 java_dir=/usr/bin/java
 
 if check_exists $java_dir; then
-	echo "Java is already installed"
+	echo -e "${GREEN}Java is already installed${NC}"
 else
-	apt-get install default-jre
+	echo -e "${GREEN}Installing Java${NC}"
+	apt-get install default-jre -y
 	java -version
-	echo "Java is installed"
+	echo -e "${GREEN}Java is installed${NC}"
 fi
