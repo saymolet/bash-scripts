@@ -47,10 +47,10 @@ export DB_PWD=mysecret
 cd package 
 
 # install app dependencies
-npm install
+# npm install
 
 # start the node.js app in the background
-node server.js &
+# node server.js &
 
 # print node processes, ignore grep
 ps aux | grep node | grep -v grep
@@ -60,12 +60,11 @@ sleep 2
 # show what port app is listening
 netstat -ltnp | grep ::3000
 
-tmp_state=$?
-
-if [ "$tmp_state" == "" ]; then
-  echo -e "${RED}App is not launched. Something went wrong${NC}"
-else
+if [ "$?" == 0 ]; then
   echo -e "${BGreen}App is launched and ready!${NC}"
+else
+  echo -e "${RED}App is not launched. Something went wrong${NC}"
+  exit 1
 fi
 
 
