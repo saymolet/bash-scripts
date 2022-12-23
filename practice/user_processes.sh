@@ -16,5 +16,5 @@ elif [ "$sort_by" == "c" ]; then
   ps aux --sort -pcpu | grep -i `whoami` | head -n "$proc_count"
 else
   echo -e "${RED}No input provided. Showing unsorted list${NC}"
-  ps aux | grep `whoami` | head -"$proc_count"
+  ps aux | grep -i `whoami` | head -"$proc_count"
 fi
