@@ -19,8 +19,3 @@ fi
 # Download the tar file and unpack it
  wget --http-user="$USER_NEXUS" --http-password="$USER_NEXUS_PSSWD" "$artifactDownloadUrl" -O "$TMP_FILE"
  tar -zxvf "$TMP_FILE"
-
-# cd to unpacked dir, run npm install and start the app
- cd package/
- npm install
- node server.js

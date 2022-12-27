@@ -47,10 +47,10 @@ export DB_PWD=mysecret
 cd package 
 
 # install app dependencies
-# npm install
+npm install
 
 # start the node.js app in the background
-# node server.js &
+node server.js &
 
 # print node processes, ignore grep
 ps aux | grep node | grep -v grep
